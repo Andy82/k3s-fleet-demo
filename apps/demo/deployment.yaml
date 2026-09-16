@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fleet-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fleet-demo
+  template:
+    metadata:
+      labels:
+        app: fleet-demo
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          ports:
+            - containerPort: 80
