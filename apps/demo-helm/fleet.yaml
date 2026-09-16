@@ -1,0 +1,17 @@
+namespace: fleet-demo-helm
+helm:
+  releaseName: mychart
+  values:
+    replicaCount: 1
+    volumes: []
+    volumeMounts: []
+    ingress:
+      enabled: false
+targetCustomizations:
+  - name: demo-robot-override
+    clusterSelector:
+      matchLabels:
+        role: demo-robot
+    helm:
+      values:
+        replicaCount: 3
