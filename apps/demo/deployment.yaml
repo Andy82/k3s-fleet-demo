@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fleet-demo
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: fleet-demo
